@@ -15,7 +15,7 @@ def convert_png_to_ico():
     png_file_path = find_png_file()
     ico_file_path = os.path.splitext(png_file_path)[0] + '.ico'
     
-    img = Image.open(png_file_path)
+    img = Image.open(png_file_path).convert("RGBA")  
     img.save(ico_file_path, format='ICO')
 
     width, height = img.size
